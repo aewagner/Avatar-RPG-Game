@@ -1,5 +1,5 @@
 body {
-    background-image: url('../images/background4.jpg');
+    background-image: url('../images/background6.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -11,10 +11,8 @@ body {
 }
 
 
-.character-image {
-    height: 9rem;
-    background-color: aliceblue;
-  
+.character-image, .fighter-image, .defender-image {
+    height: 10rem;
 }
 
 #title-image {

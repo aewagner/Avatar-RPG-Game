@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Avatar: The Last Airbender RPG Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
@@ -23,33 +25,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-8">
-                    <div class="row  text-center character-choice">
-                        <div class="col character-card">
-                            <span>Aang</span>
-                            <img class="img-fluid character-image" src="./assets/images/aang.png" alt="Aang">
-                            <span>180</span>
-                            
-
-                        </div>
-
-                        <div class="col character-card">
-
-                            <img class="img-fluid character-image" src="./assets/images/katara.png" alt="Katara">
-
-                        </div>
-
-                        <div class="col character-card">
-
-                            <img class="img-fluid character-image" src="./assets/images/toph.png" alt="Toph">
-
-                        </div>
-
-                        <div class="col character-card">
-
-                            <img class="img-fluid character-image" src="./assets/images/zuko.png" alt="Zuko">
-
-                        </div>
-
+                    <div id="select-fighter-text" class="row"></div>
+                    <div id="character-choice" class="row  text-center character-choice-row">
+                        <!-- Characters will be generated with jQuery -->
+                    </div>
+                    <div id="select-defender-text" class="row"></div>
+                    <div id="defender-choice" class="row  text-center character-choice-row">
+                        <!-- Characters will be generated with jQuery -->
                     </div>
                 </div>
             </div>
