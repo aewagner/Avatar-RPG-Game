@@ -1,0 +1,22 @@
+body {
+    background-image: url('../images/background4.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.character-card {
+    border: 0.1rem solid black;
+}
+
+
+.character-image {
+    height: 9rem;
+    background-color: aliceblue;
+  
+}
+
+#title-image {
+    height: 12rem;
+}
