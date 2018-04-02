@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Added link to the jQuery Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
@@ -19,20 +20,22 @@
         <div class="row text-right">
             <div class="col">
                 <img src="./assets/images/logo-white.png" id="title-image" class="img-fluid" alt="Responsive image">
-                <h1 id="title-text">RPG Game</h1>
+                <h1 id="title-text">RPG GAME</h1>
             </div>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-8">
                     <div id="select-fighter-text" class="row"></div>
-                    <div id="character-choice" class="row  text-center character-choice-row">
+                    <div id="character-choice" class="row align-items-center text-center character-choice-row">
                         <!-- Characters will be generated with jQuery -->
                     </div>
-                    <div id="select-defender-text" class="row"></div>
+                    <div id="attack-button-row" class="row text-center justify-content-center"></div>
+                    <div id="select-defender-text" class="row text-center justify-content-center"></div>
                     <div id="defender-choice" class="row  text-center character-choice-row">
                         <!-- Characters will be generated with jQuery -->
                     </div>
+                    <div id="reset-button-row" class="row justify-content-center"></div>
                 </div>
             </div>
         </div>

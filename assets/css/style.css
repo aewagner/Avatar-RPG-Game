@@ -4,6 +4,8 @@ body {
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
+    font-family: 'Caveat Brush', cursive;
+    color: whitesmoke;
 }
 
 .character-card {
@@ -13,8 +15,22 @@ body {
 
 .character-image, .fighter-image, .defender-image {
     height: 10rem;
+    
+}
+
+.character-image:hover, .fighter-image:hover, .defender-image:hover {
+    cursor: pointer;
 }
 
 #title-image {
     height: 12rem;
 }
+
+#title-text {
+    margin-right: 10rem;
+}
+
+#attack-button-row, #reset-button-row {
+    margin: 3rem;
+}
+
