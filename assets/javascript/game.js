@@ -21,7 +21,7 @@ $(document).ready(function () {
             image: './assets/images/toph.png',
             hp: 160,
             ap: 10,
-            cap: 50,
+            cap: 40,
             index: 2
         },
         {
@@ -42,7 +42,7 @@ $(document).ready(function () {
 
     function gameSetUp() {
         characterArray.map(character => {
-            console.log(character);
+            // console.log(character);
             let column = $('<div class="col-md col-xs-12">');
             let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid character-image" alt=${character.name} ><h6>HP: ${character.hp}</h6>`);
 
@@ -61,9 +61,9 @@ $(document).ready(function () {
     function selectFighter() {
         $('.character-image').on('click', function () {
             const selection = $(this).attr('index');
-            console.log(selection);
+            // console.log(selection);
             fighter.push(characterArray[selection]);
-            console.log(fighter);
+            // console.log(fighter);
             $('#character-choice').empty();
 
             fighterMap();
@@ -88,18 +88,18 @@ $(document).ready(function () {
         $('.defender-image').on('click', function () {
             const selection = $(this).attr('index');
             const selectionId = $(this).attr('id');
-            console.log(selection);
-            console.log('selectionId', selectionId);
+            // console.log(selection);
+            // console.log('selectionId', selectionId);
             defender = [];
             defender.push(characterArray[selection]);
-            console.log(defender);
+            // console.log(defender);
             // $(`#${selectionId}`).remove();
-            console.log('defenderRow before', defenderRow);
+            // console.log('defenderRow before', defenderRow);
             defenderRow = defenderRow.filter(object => {
                 if (object.name !== selectionId)
                     return object;
             });
-            console.log('defenderRow after', defenderRow);
+            // console.log('defenderRow after', defenderRow);
 
             $('#select-defender-text').html('<h2>Opponents Left to Fight</h2>');
             $('#defender-choice').empty();
@@ -108,9 +108,9 @@ $(document).ready(function () {
             fighterMap();
 
             defender.map(character => {
-                console.log(character);
+                // console.log(character);
                 let column = $('<div class="col-md col-xs-12">');
-                let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid defender-image" alt=${character.name} ><h6 id="defender-hp">${character.hp}</h6>`);
+                let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid defender-image" alt=${character.name} ><h6 id="defender-hp">HP: ${character.hp}</h6>`);
 
                 newDiv.attr('index', character.index);
 
@@ -130,33 +130,42 @@ $(document).ready(function () {
             //     defenderRow.push(character);
             // });
             fightLogic();
-            console.log('defender selected', defender);
+            // console.log('defender selected', defender);
         });
 
     }
 
     function fightLogic() {
         $('#attack-button').on('click', function () {
-            console.log('click');
-            console.log('fighter[0].hp', fighter[0].hp);
-            console.log('defender[0].hp', defender[0].hp);
+            // console.log('click');
+            // console.log('fighter[0].hp', fighter[0].hp);
+            // console.log('defender[0].hp', defender[0].hp);
             defender[0].hp -= fighter[0].ap;
             fighter[0].hp -= defender[0].cap;
             fighter[0].ap += fighter[0].ap;
-            console.log('fighter[0].hp', fighter[0].hp);
-            console.log('fighter[0].ap', fighter[0].ap);
-            console.log('defender[0].hp', defender[0].hp);
-            $('#fighter-hp').text(fighter[0].hp);
-            $('#defender-hp').text(defender[0].hp);
+            // console.log('fighter[0].hp', fighter[0].hp);
+            // console.log('fighter[0].ap', fighter[0].ap);
+            // console.log('defender[0].hp', defender[0].hp);
+            $('#fighter-hp').text(`HP: ${fighter[0].hp}`);
+            $('#defender-hp').text(`HP: ${defender[0].hp}`);
+
 
             if (defender[0].hp <= 0) {
-                console.log('You Won! pick a new opponent');
+                // console.log('You Won! pick a new opponent');
                 wins++;
                 $('#character-choice').empty();
-
-
+                $('#attack-button-row').empty();
+                $('#select-defender-text').html('<h2>Select Your Next Opponent!</h2>');
+                console.log('wins', wins);
+                if (wins === 3) {
+                    console.log('Winner!!!');
+                    $('#select-defender-text').html("<h1>You Win!</h1>");
+                    $('#attack-button-row').empty();
+                    $('#reset-button-row').html('<button type="button" id="reset-button" class="btn btn-primary">Reset</button>');
+                    reset();
+                }
                 // fighter.map(character => {
-                //     console.log(character);
+                    // console.log(character);
                 //     let column = $('<div class="col">');
                 //     let newDiv = $(`<img src="${character.image}" id="${character.name}" class="img-fluid fighter-image" alt=${character.name} >`);
 
@@ -170,31 +179,27 @@ $(document).ready(function () {
 
                 fighterMap();
 
-                console.log('wins', wins);
-                if (wins === 3) {
-                    $('#select-defender-text').html("<h1>You Win!</h1>");
-                    $('#attack-button-row').empty();
-                    $('#restet-button-row').html('<button type="button" id="reset-button" class="btn btn-primary">Reset</button>');
-                    reset();
-                }
+                
+                
 
-                $('#attack-button-row').empty();
-                $('#select-defender-text').html('<h2>Select Your Next Opponent!</h2>');
+                
                 selectDefender();
-                console.log('New opponent', defender);
+                // console.log('New opponent', defender);
                 
 
 
             }
 
             if (fighter[0].hp <= 0) {
-                console.log('You lose');
+                // console.log('You lose');
                 $('#select-defender-text').html("<h1>GAME OVER!</h1>");
                 $('#attack-button-row').empty();
                 $('#defender-choice').empty();
                 $('#reset-button-row').html('<button type="button" id="reset-button" class="btn btn-primary">Reset</button>');
                 reset();
             }
+
+
 
 
         });
@@ -225,7 +230,7 @@ $(document).ready(function () {
                     image: './assets/images/toph.png',
                     hp: 160,
                     ap: 10,
-                    cap: 50,
+                    cap: 40,
                     index: 2
                 },
                 {
@@ -241,7 +246,7 @@ $(document).ready(function () {
             defenderRow = [];
             defender = [];
             wins = 0;
-            console.log('After reset characterArray', characterArray);
+            // console.log('After reset characterArray', characterArray);
             $('#defender-choice').empty();
             $('#character-choice').empty();
             $('#attack-button-row').empty();
@@ -253,9 +258,9 @@ $(document).ready(function () {
 
     function fighterMap() {
         fighter.map(character => {
-            console.log(character);
+            // console.log(character);
             let column = $('<div class="col-md col-xs-12">');
-            let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid fighter-image" alt=${character.name} ><h6 id="fighter-hp">${character.hp}</h6>`);
+            let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid fighter-image" alt=${character.name} ><h6 id="fighter-hp">HP: ${character.hp}</h6>`);
 
             newDiv.attr('index', character.index);
 
@@ -268,9 +273,9 @@ $(document).ready(function () {
 
     function defenderRowMap() {
         defenderRow.map(character => {
-            console.log(character);
+            // console.log(character);
             let column = $('<div class="col-md col-xs-12">');
-            let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid defender-image" alt=${character.name} ><h6>${character.hp}</h6>`);
+            let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid defender-image" alt=${character.name} ><h6>HP: ${character.hp}</h6>`);
 
             newDiv.attr('index', character.index);
 
