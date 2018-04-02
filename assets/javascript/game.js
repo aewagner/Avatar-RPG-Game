@@ -156,26 +156,14 @@ $(document).ready(function () {
                 $('#character-choice').empty();
                 $('#attack-button-row').empty();
                 $('#select-defender-text').html('<h2>Select Your Next Opponent!</h2>');
-                console.log('wins', wins);
+                // console.log('wins', wins);
                 if (wins === 3) {
-                    console.log('Winner!!!');
+                    // console.log('Winner!!!');
                     $('#select-defender-text').html("<h1>You Win!</h1>");
                     $('#attack-button-row').empty();
                     $('#reset-button-row').html('<button type="button" id="reset-button" class="btn btn-primary">Reset</button>');
                     reset();
                 }
-                // fighter.map(character => {
-                    // console.log(character);
-                //     let column = $('<div class="col">');
-                //     let newDiv = $(`<img src="${character.image}" id="${character.name}" class="img-fluid fighter-image" alt=${character.name} >`);
-
-                //     newDiv.attr('index', character.index);
-
-                //     column.html(newDiv);
-
-                //     $('#character-choice').append(column);
-
-                // });
 
                 fighterMap();
 
