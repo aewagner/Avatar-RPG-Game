@@ -43,7 +43,7 @@ $(document).ready(function () {
     function gameSetUp() {
         characterArray.map(character => {
             console.log(character);
-            let column = $('<div class="col">');
+            let column = $('<div class="col-md col-xs-12">');
             let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid character-image" alt=${character.name} ><h6>HP: ${character.hp}</h6>`);
 
             newDiv.attr('index', character.index);
@@ -109,14 +109,14 @@ $(document).ready(function () {
 
             defender.map(character => {
                 console.log(character);
-                let column = $('<div class="col">');
+                let column = $('<div class="col-md col-xs-12">');
                 let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid defender-image" alt=${character.name} ><h6 id="defender-hp">${character.hp}</h6>`);
 
                 newDiv.attr('index', character.index);
 
                 column.html(newDiv);
 
-                $('#character-choice').append('<div class="col"><h3 id="vs">VS.</h3></div>');
+                $('#character-choice').append('<div class="col-md col-xs-12"><h3 id="vs">VS.</h3></div>');
                 $('#character-choice').append(column);
 
             });
@@ -254,7 +254,7 @@ $(document).ready(function () {
     function fighterMap() {
         fighter.map(character => {
             console.log(character);
-            let column = $('<div class="col">');
+            let column = $('<div class="col-md col-xs-12">');
             let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid fighter-image" alt=${character.name} ><h6 id="fighter-hp">${character.hp}</h6>`);
 
             newDiv.attr('index', character.index);
@@ -269,7 +269,7 @@ $(document).ready(function () {
     function defenderRowMap() {
         defenderRow.map(character => {
             console.log(character);
-            let column = $('<div class="col">');
+            let column = $('<div class="col-md col-xs-12">');
             let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid defender-image" alt=${character.name} ><h6>${character.hp}</h6>`);
 
             newDiv.attr('index', character.index);
