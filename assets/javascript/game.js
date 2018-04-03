@@ -44,7 +44,7 @@ $(document).ready(function () {
         characterArray.map(character => {
             // console.log(character);
             let column = $('<div class="col-md col-xs-12">');
-            let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid character-image" alt=${character.name} ><h6>HP: ${character.hp}</h6>`);
+            let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid character-image" alt=${character.name} ><h4>HP: ${character.hp}</h4>`);
 
             newDiv.attr('index', character.index);
 
@@ -110,7 +110,7 @@ $(document).ready(function () {
             defender.map(character => {
                 // console.log(character);
                 let column = $('<div class="col-md col-xs-12">');
-                let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid defender-image" alt=${character.name} ><h6 id="defender-hp">HP: ${character.hp}</h6>`);
+                let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid defender-image" alt=${character.name} ><h4 id="defender-hp">HP: ${character.hp}</h4>`);
 
                 newDiv.attr('index', character.index);
 
@@ -248,7 +248,7 @@ $(document).ready(function () {
         fighter.map(character => {
             // console.log(character);
             let column = $('<div class="col-md col-xs-12">');
-            let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid fighter-image" alt=${character.name} ><h6 id="fighter-hp">HP: ${character.hp}</h6>`);
+            let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid fighter-image" alt=${character.name} ><h4 id="fighter-hp">HP: ${character.hp}</h4>`);
 
             newDiv.attr('index', character.index);
 
@@ -263,7 +263,7 @@ $(document).ready(function () {
         defenderRow.map(character => {
             // console.log(character);
             let column = $('<div class="col-md col-xs-12">');
-            let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid defender-image" alt=${character.name} ><h6>HP: ${character.hp}</h6>`);
+            let newDiv = $(`<h4>${character.name}</h4><img src="${character.image}" id="${character.name}" class="img-fluid defender-image" alt=${character.name} ><h4>HP: ${character.hp}</h4>`);
 
             newDiv.attr('index', character.index);
 
