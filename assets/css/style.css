@@ -22,13 +22,32 @@ body {
     cursor: pointer;
 }
 
+.modal {
+    color: black;
+}
+
+.modal-content {
+    background-color: rgba(250, 235, 215, 0.767);
+}
+
+.under-title {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* #modal-button {
+    margin-right: 10rem;
+    margin-left: 8rem;
+} */
+
 #title-image {
     height: 12rem;
 }
 
-#title-text {
-    margin-right: 10rem;
-}
+/* #title-text {
+    margin-right: 8rem;
+   
+} */
 
 #attack-button-row, #reset-button-row {
     margin: 3rem;

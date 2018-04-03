@@ -8,8 +8,8 @@
     <link rel="shortcut icon" href="./assets/images/aang.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Added link to the jQuery Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
@@ -18,25 +18,70 @@
 
 <body>
     <div class="container-fluid">
-        <div class="row text-right">
-            <div class="col">
-                <img src="./assets/images/logo-white.png" id="title-image" class="img-fluid" alt="Responsive image">
-                <h1 id="title-text">RPG GAME</h1>
+        <div class="row text-right justify-content-end">
+            <div class="col-md-5 col-xs-12">
+                <img src="./assets/images/logo-white.png" id="title-image" class="img-fluid" alt="logo">
+                <div class="container">
+                    <div class="row">
+                        <div class="col under-title">
+                            <h1 class="text-right" id="title-text">RPG GAME</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col under-title">
+                            <!-- Button trigger modal -->
+                            <button type="button" id="modal-button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
+                                Rules
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-xs-12">
+                <div id="select-fighter-text" class="row under-title"></div>
+                <div id="character-choice" class="row align-items-center text-center character-choice-row">
+                    <!-- Characters will be generated with jQuery -->
+                </div>
+                <div id="attack-button-row" class="row text-center justify-content-center"></div>
+                <div id="select-defender-text" class="row text-center justify-content-center under-title"></div>
+                <div id="defender-choice" class="row  text-center character-choice-row">
+                    <!-- Characters will be generated with jQuery -->
+                </div>
+                <div id="reset-button-row" class="row justify-content-center"></div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-xs-12">
-                    <div id="select-fighter-text" class="row"></div>
-                    <div id="character-choice" class="row align-items-center text-center character-choice-row">
-                        <!-- Characters will be generated with jQuery -->
-                    </div>
-                    <div id="attack-button-row" class="row text-center justify-content-center"></div>
-                    <div id="select-defender-text" class="row text-center justify-content-center"></div>
-                    <div id="defender-choice" class="row  text-center character-choice-row">
-                        <!-- Characters will be generated with jQuery -->
-                    </div>
-                    <div id="reset-button-row" class="row justify-content-center"></div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Rules</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Each character has their health points (HP) displayed below their image</p>
+                    <p>Select your attacking character</p>
+                    <p>Next you will be prompted to select an opponent</p>
+                    <p>Click the "Attack!" button to attack your apponent</p>
+                    <p>Once you attack your opponent your attack will deduct HP from your opponent, and your opponent's counter
+                        attack will deduct from your HP</p>
+                    <p>Your attack will double in strength with each new attack</p>
+                    <p>Try to defeat all of your opponents without losing all of your HP</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
