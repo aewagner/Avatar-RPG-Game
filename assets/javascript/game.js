@@ -146,8 +146,13 @@ $(document).ready(function () {
             // console.log('fighter[0].hp', fighter[0].hp);
             // console.log('fighter[0].ap', fighter[0].ap);
             // console.log('defender[0].hp', defender[0].hp);
-            $('#fighter-hp').text(`HP: ${fighter[0].hp}`);
-            $('#defender-hp').text(`HP: ${defender[0].hp}`);
+            $('#fighter-hp').text(`HP: ${fighter[0].hp}`).css('color', 'red');
+            $('#defender-hp').text(`HP: ${defender[0].hp}`).css('color', 'red');
+
+            setTimeout(() => {
+                $('#fighter-hp').css('color', 'whitesmoke');
+                $('#defender-hp').css('color', 'whitesmoke');
+            }, 200);
 
 
             if (defender[0].hp <= 0) {
